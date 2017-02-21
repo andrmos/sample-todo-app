@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 public class NewTodoActivity extends AppCompatActivity {
 
+    /* The input field for the new to do */
     private EditText inputField;
 
     @Override
@@ -20,6 +21,11 @@ public class NewTodoActivity extends AppCompatActivity {
         inputField = (EditText) findViewById(R.id.newTodoInput);
     }
 
+    /**
+     * Fetches the text from the 'new to do' input field, and sends it back to MainActivity.
+     * If the text in the input field is empty, an error message is shown.
+     * @param view The view of the clicked button
+     */
     public void createNewTodo(View view) {
         String text = inputField.getText().toString();
 
