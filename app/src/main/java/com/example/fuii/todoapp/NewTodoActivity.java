@@ -27,7 +27,7 @@ public class NewTodoActivity extends AppCompatActivity {
 
         } else {
             Intent intent = new Intent();
-            intent.putExtra("todoText", text);
+            intent.putExtra(MainActivity.NEW_TODO_KEY, text);
             setResult(RESULT_OK, intent);
             finish();
         }

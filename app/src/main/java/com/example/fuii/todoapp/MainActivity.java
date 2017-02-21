@@ -3,7 +3,6 @@ package com.example.fuii.todoapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -12,7 +11,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ListView todoListView;
+    public static final String NEW_TODO_KEY = "todoText";
+    public static final int NEW_TODO_REQUEST_CODE = 1;
     private ArrayList<String> todos;
     private ArrayAdapter<String> todoListAdapter;
 
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         todos.add("Kjøpe pils");
         todos.add("Lære Android utvikling");
 
-        todoListView = (ListView) findViewById(R.id.todoList);
+        ListView todoListView = (ListView) findViewById(R.id.todoList);
         todoListAdapter = new ArrayAdapter<>(this, R.layout.todo_element, todos);
         todoListView.setAdapter(todoListAdapter);
 
@@ -39,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == 1) {
+        if (requestCode == NEW_TODO_REQUEST_CODE) {
             Bundle bundle = data.getExtras();
-            String newTodo = bundle.getString("todoText");
+            String newTodo = bundle.getString(NEW_TODO_KEY);
             todos.add(newTodo);
             todoListAdapter.notifyDataSetChanged();
         }
