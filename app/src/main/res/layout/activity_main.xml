@@ -21,5 +21,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/create_new_todo"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:onClick="startNewTodoActivity"/>
 </RelativeLayout>
