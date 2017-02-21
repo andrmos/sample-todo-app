@@ -2,6 +2,7 @@ package com.example.fuii.todoapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -22,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
         todos.add("Lære Android utvikling");
 
         todoListView = (ListView) findViewById(R.id.todoList);
-
-
+        ArrayAdapter<String> todoListAdapter = new ArrayAdapter<>(this, R.layout.todo_element, todos);
+        todoListView.setAdapter(todoListAdapter);
 
     }
 }
