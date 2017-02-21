@@ -15,4 +15,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     </ListView>
+
+    <Button
+        android:id="@+id/addTodoButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/create_new_todo"
+        android:layout_alignParentBottom="true"/>
 </RelativeLayout>
