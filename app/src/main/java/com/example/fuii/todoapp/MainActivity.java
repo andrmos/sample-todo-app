@@ -40,10 +40,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == NEW_TODO_REQUEST_CODE) {
-            Bundle bundle = data.getExtras();
-            String newTodo = bundle.getString(NEW_TODO_KEY);
-            todos.add(newTodo);
-            todoListAdapter.notifyDataSetChanged();
+            if (resultCode == RESULT_OK) {
+                Bundle bundle = data.getExtras();
+                String newTodo = bundle.getString(NEW_TODO_KEY);
+                todos.add(newTodo);
+                todoListAdapter.notifyDataSetChanged();
+            }
         }
     }
 }
