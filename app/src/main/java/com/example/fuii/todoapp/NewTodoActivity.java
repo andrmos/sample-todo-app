@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class NewTodoActivity extends AppCompatActivity {
 
@@ -20,9 +21,15 @@ public class NewTodoActivity extends AppCompatActivity {
 
     public void createNewTodo(View view) {
         String text = inputField.getText().toString();
-        Intent intent = new Intent();
-        intent.putExtra("todoText", text);
-        setResult(RESULT_OK, intent);
-        finish();
+
+        if (text.isEmpty()) {
+            Toast.makeText(this, R.string.error_empty_todo, Toast.LENGTH_SHORT).show();
+
+        } else {
+            Intent intent = new Intent();
+            intent.putExtra("todoText", text);
+            setResult(RESULT_OK, intent);
+            finish();
+        }
     }
 }

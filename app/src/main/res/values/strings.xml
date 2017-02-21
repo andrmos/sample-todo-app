@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Todo app</string>
     <string name="create_new_todo">Create new todo</string>
+    <string name="error_empty_todo">Din todo er tom</string>
 </resources>
