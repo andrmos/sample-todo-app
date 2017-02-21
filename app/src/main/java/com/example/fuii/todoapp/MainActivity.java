@@ -33,9 +33,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     public void startNewTodoActivity(View view) {
         Intent intent = new Intent(this, NewTodoActivity.class);
-        startActivityForResult(intent, 1);
+        startActivityForResult(intent, NEW_TODO_REQUEST_CODE);
     }
 
     @Override
