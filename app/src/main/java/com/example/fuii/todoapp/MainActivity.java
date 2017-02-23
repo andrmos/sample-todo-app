@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     public static final int NEW_TODO_REQUEST_CODE = 1;
     /* The list containing all todos */
     private ArrayList<String> todos;
-    /* The adapter of the to do list */
+    /* Adapter responsible for converting the todos ArrayList into Views for the UI */
     private ArrayAdapter<String> todoListAdapter;
 
     @Override
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         todos.add("Lære Android utvikling");
 
         ListView todoListView = (ListView) findViewById(R.id.todoList);
-        // Create an adapter with all the todos, and link it to the list view
+        // Create adapter with all the todos, and link it to the list view
         todoListAdapter = new ArrayAdapter<>(this, R.layout.todo_element, todos);
         todoListView.setAdapter(todoListAdapter);
     }
